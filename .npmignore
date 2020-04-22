@@ -1,0 +1,39 @@
+# --------------------------
+# System
+# --------------------------
+
+*~
+*#*
+._*
+\#*
+*.bak
+*.tmp
+*.swp
+*.pid
+.DS_Store
+
+# --------------------------
+# Git
+# --------------------------
+
+.gitconfig
+
+# --------------------------
+# Node
+# --------------------------
+
+.npm
+/node_modules
+npm-debug.log
+
+# --------------------------
+# Project
+# --------------------------
+
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+.idea
+.idea_modules/
+cache

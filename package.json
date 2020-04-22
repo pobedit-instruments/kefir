@@ -1,0 +1,18 @@
+{
+    "name": "@pobedit/kefir",
+    "version": "0.0.1",
+    "description": "A BEM friendly class name generator",
+    "author": "Alexander Abashkin <monolithed@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "npm prune && tsc && mocha tests",
+        "debug": "DEBUG=@qa:* npm test",
+        "prepublishOnly": "npm test"
+    },
+    "devDependencies": {
+        "@types/node": "13.13.1",
+        "@types/mocha": "7.0.2",
+        "mocha": "7.1.1",
+        "typescript": "3.8.3"
+    }
+}
