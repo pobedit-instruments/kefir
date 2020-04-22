@@ -96,11 +96,8 @@ $('foo', 'bar');
 $('foo', 'bar', ['baz', 'gaz']);
  // foo__bar baz gaz
 
-$('foo', 'bar', ['baz', 'taz']);
- // foo__bar baz taz
-
-$('foo', 'bar', {baz: true}, ['taz']);
- // foo__bar--baz taz
+$('foo', 'bar', {baz: true, gaz: true}, ['taz']);
+ // foo__bar--baz foo__bar--gaz taz
 
 $('foo', 'bar', {baz: true});
  // foo__bar--baz
@@ -111,11 +108,11 @@ $('foo', 'bar', {baz: true});
 ```typescript
 import {$} from '@pobedit/kefir';
 
-$('foo', {bar: true}, ['baz']);
- // foo--bar baz
-
 $('foo', {bar: true});
  // foo--bar
+
+$('foo', {bar: true, gaz: true}, ['baz']);
+ // foo--bar foo--gar baz
 
 $('foo', ['bar']);
  // foo bar
