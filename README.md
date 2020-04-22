@@ -14,6 +14,8 @@ npm install @pobedit/kefir --save
 
 ## Basic usage
 
+The fist example of basic usage:
+
  ```typescript
 import React, {ReactNode, useState} from 'react';
 import {$} from '@pobedit/kefir';
@@ -28,6 +30,8 @@ export const Example: React.FunctionComponent<Props> = (props) => {
     return <div className={$('foo', {bar})} />;
 };
 ```
+
+The second example of advanced usage:
 
 **Output**:
 
@@ -75,6 +79,8 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 #### Block
 
 ```typescript
+import {$} from '@pobedit/kefir';
+
 $('foo');
  // foo
 ```
