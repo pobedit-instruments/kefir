@@ -4,6 +4,10 @@
     "description": "A BEM friendly class name generator",
     "author": "Alexander Abashkin <monolithed@gmail.com>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:pobedit-instruments/kefir.git"
+    },
     "scripts": {
         "test": "npm prune && tsc && mocha tests",
         "debug": "DEBUG=@qa:* npm test",

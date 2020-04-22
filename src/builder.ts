@@ -22,13 +22,15 @@ export const blockWithModifiers = (
     block: string,
     modifiers: Modifiers
 ): string => {
-    return Object.entries(modifiers)
-        .map(([name, value]) => {
-            if (value) {
-                return `${block}--${name}`;
-            }
-        })
-        .join(' ');
+    let result = '';
+
+    for (const [name, value] of Object.entries(modifiers)) {
+        if (value) {
+            result += ` ${block}--${name}`;
+        }
+    }
+
+    return result.trim();
 };
 
 /* block--modifier extras */

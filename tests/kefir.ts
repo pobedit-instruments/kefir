@@ -2,13 +2,13 @@ import * as assert from 'assert';
 import {$, kefir} from '../src/kefir';
 
 describe('Kefir', () => {
-    it.only('$', () => {
+    it('$', () => {
         const actual = $('foo', {bar: true});
 
         assert.equal(actual, 'foo--bar');
     });
 
-    it.only('factory', () => {
+    it('factory', () => {
         let $ = kefir('foo');
 
         const actual = $({bar: true});

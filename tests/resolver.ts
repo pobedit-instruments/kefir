@@ -27,7 +27,7 @@ describe('Builder', () => {
     });
 
     it('block__element--modifier extras', () => {
-        const actual = resolver('foo', 'bar', {baz: true, gaz: false}, ['taz']);
+        const actual = resolver('foo', 'bar', {baz: true, gaz: false, raz: false}, ['taz']);
 
         assert.equal(actual, 'foo__bar--baz taz');
     });
