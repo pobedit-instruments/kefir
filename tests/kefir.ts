@@ -5,7 +5,7 @@ describe('Kefir', () => {
     it('$', () => {
         const actual = $('foo', {bar: true});
 
-        assert.equal(actual, 'foo--bar');
+        assert.equal(actual, 'foo foo--bar');
     });
 
     it('factory', () => {
@@ -13,6 +13,6 @@ describe('Kefir', () => {
 
         const actual = $({bar: true});
 
-        assert.equal(actual, 'foo--bar');
+        assert.equal(actual, 'foo foo--bar');
     });
 });

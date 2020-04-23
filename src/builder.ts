@@ -22,7 +22,7 @@ export const blockWithModifiers = (
     block: string,
     modifiers: Modifiers
 ): string => {
-    let result = '';
+    let result = ` ${block}`;
 
     for (const [name, value] of Object.entries(modifiers)) {
         if (value) {
@@ -59,7 +59,7 @@ export const blockWithElementAndModifiers = (
 ): string => {
     const prefix = blockWithElement(block, element);
 
-    return `${prefix} ${blockWithModifiers(prefix, modifiers)}`;
+    return blockWithModifiers(prefix, modifiers);
 };
 
 /* block__element--modifier extras */

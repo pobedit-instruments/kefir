@@ -43,12 +43,12 @@ describe('Builder', () => {
     it('blockWithModifiers', () => {
         const actual = blockWithModifiers('foo', {bar: true});
 
-        assert.equal(actual, 'foo--bar');
+        assert.equal(actual, 'foo foo--bar');
     });
 
     it('blockWithModifiersAndExtras', () => {
         const actual = blockWithModifiersAndExtras('foo', {bar: true}, ['gaz']);
 
-        assert.equal(actual, 'foo--bar gaz');
+        assert.equal(actual, 'foo foo--bar gaz');
     });
 });

@@ -53,25 +53,25 @@ describe('Builder', () => {
     it('block--modifier extras', () => {
         const actual = resolver('foo', {bar: true}, ['baz']);
 
-        assert.equal(actual, 'foo--bar baz');
+        assert.equal(actual, 'foo foo--bar baz');
     });
 
     it('block--modifier... extras...', () => {
         const actual = resolver('foo', {bar: true, baz: true}, ['taz', 'gaz']);
 
-        assert.equal(actual, 'foo--bar foo--baz taz gaz');
+        assert.equal(actual, 'foo foo--bar foo--baz taz gaz');
     });
 
     it('block--modifier', () => {
         const actual = resolver('foo', {bar: true});
 
-        assert.equal(actual, 'foo--bar');
+        assert.equal(actual, 'foo foo--bar');
     });
 
     it('block--modifier...', () => {
         const actual = resolver('foo', {bar: true, baz: true});
 
-        assert.equal(actual, 'foo--bar foo--baz');
+        assert.equal(actual, 'foo foo--bar foo--baz');
     });
 
     it('block extras', () => {

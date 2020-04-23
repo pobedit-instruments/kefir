@@ -55,7 +55,7 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 
 ```html
 <div class="foo__container foo__container--bar">
-    <button class="button--baz">Click</button>>
+    <button class="button button--baz">Click</button>>
 </div>
 ```
 
@@ -98,10 +98,10 @@ $('foo', 'bar', {baz: true, gaz: true}, ['taz']);
 import {$} from '@pobedit/kefir';
 
 $('foo', {bar: true});
- // foo--bar
+ // foo foo--bar
 
 $('foo', {bar: true, gaz: true}, ['baz']);
- // foo--bar foo--gar baz
+ // foo foo--bar foo--gar baz
 
 $('foo', ['bar']);
  // foo bar
@@ -119,7 +119,7 @@ import {$} from '@pobedit/kefir';
 let $ = kefir('foo');
 
 $({bar: true});
- // foo--bar
+ // foo foo--bar
 ```
 
 The second example of advanced usage:
@@ -153,7 +153,7 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 ```html
 ```html
 <div class="foo__container foo__container--bar">
-    <button class="button--baz">Click</button>>
+    <button class="button button--baz">Click</button>>
 </div>
 ```
 
