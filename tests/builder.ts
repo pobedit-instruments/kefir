@@ -25,13 +25,13 @@ describe('Builder', () => {
     it('blockWithElementAndModifiers', () => {
         const actual = blockWithElementAndModifiers('foo', 'bar', {baz: true});
 
-        assert.equal(actual, 'foo__bar--baz');
+        assert.equal(actual, 'foo__bar foo__bar--baz');
     });
 
     it('blockWithElementModifiersAndExtras', () => {
         const actual = blockWithElementModifiersAndExtras('foo', 'bar', {baz: true}, ['gaz', 'taz']);
 
-        assert.equal(actual, 'foo__bar--baz gaz taz');
+        assert.equal(actual, 'foo__bar foo__bar--baz gaz taz');
     });
 
     it('blockWithExtras', () => {

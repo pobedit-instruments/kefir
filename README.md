@@ -14,8 +14,6 @@ npm install @pobedit/kefir --save
 
 ## Basic usage
 
-The fist example of basic usage:
-
  ```typescript
 import React, {ReactNode, useState} from 'react';
 import {$} from '@pobedit/kefir';
@@ -27,46 +25,37 @@ type Props = {
 export const Example: React.FunctionComponent<Props> = (props) => {
     const {bar} = props;
 
-    return <div className={$('foo', {bar})} />;
-};
-```
-
-The second example of advanced usage:
-
-**Output**:
-
-```html
-<div class="foo--bar" />
-```
- 
- ```typescript
-import React, {ReactNode, useState} from 'react';
-import {kefir} from '@pobedit/kefir';
-
-type Props = {
-    bar: boolean;
-    baz: boolean;
-}
-
-export const Example: React.FunctionComponent<Props> = (props) => {
-    const {bar, baz} = props;
-    let $ = kefir('foo');
-
-
     return (
-        <div className={$({ bar })}>
-            <div className={$({ baz })} />
+        <div className={$('foo', 'container', {bar})}>
+            <button className={$('button', { baz })}>
+                Click!
+            </button>
         </div>
     );
 };
 ```
 
+```less
+.foo {
+  &__container {
+      &--bar {
+        background-color: red;
+      }
+  }
+}
+
+.button {
+  &--baz {
+    color: white;
+  }
+}
+```
+
 **Output**:
 
 ```html
-
-<div class="foo--bar">
-    <div class="foo--baz" />
+<div class="foo__container foo__container--bar">
+    <button class="button--baz">Click</button>>
 </div>
 ```
 
@@ -96,11 +85,11 @@ $('foo', 'bar');
 $('foo', 'bar', ['baz', 'gaz']);
  // foo__bar baz gaz
 
-$('foo', 'bar', {baz: true, gaz: true}, ['taz']);
- // foo__bar--baz foo__bar--gaz taz
-
 $('foo', 'bar', {baz: true});
- // foo__bar--baz
+ // foo__bar foo__bar--baz
+
+$('foo', 'bar', {baz: true, gaz: true}, ['taz']);
+ // foo__bar foo__bar--baz foo__bar--gaz taz
 ```
 
 #### Modifier
@@ -131,6 +120,41 @@ let $ = kefir('foo');
 
 $({bar: true});
  // foo--bar
+```
+
+The second example of advanced usage:
+
+ ```typescript
+import React, {ReactNode, useState} from 'react';
+import {kefir} from '@pobedit/kefir';
+
+type Props = {
+    bar: boolean;
+    baz: boolean;
+}
+
+export const Example: React.FunctionComponent<Props> = (props) => {
+    const {bar, baz} = props;
+    let $ = kefir('foo');
+
+
+    return (
+        <div className={$('container', { bar })}>
+            <button className={$('button', { baz })}>
+                Click!
+            </button>
+        </div>
+    );
+};
+```
+
+**Output**:
+
+```html
+```html
+<div class="foo__container foo__container--bar">
+    <button class="button--baz">Click</button>>
+</div>
 ```
 
 ## Contributing

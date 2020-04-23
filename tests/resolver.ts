@@ -29,25 +29,25 @@ describe('Builder', () => {
     it('block__element--modifier extras', () => {
         const actual = resolver('foo', 'bar', {baz: true, gaz: false, raz: false}, ['taz']);
 
-        assert.equal(actual, 'foo__bar--baz taz');
+        assert.equal(actual, 'foo__bar foo__bar--baz taz');
     });
 
     it('block__element--modifier... extras...', () => {
         const actual = resolver('foo', 'bar', {baz: true, taz: true}, ['gaz', 'maz']);
 
-        assert.equal(actual, 'foo__bar--baz foo__bar--taz gaz maz');
+        assert.equal(actual, 'foo__bar foo__bar--baz foo__bar--taz gaz maz');
     });
 
     it('block__element--modifier', () => {
         const actual = resolver('foo', 'bar', {baz: true});
 
-        assert.equal(actual, 'foo__bar--baz');
+        assert.equal(actual, 'foo__bar foo__bar--baz');
     });
 
     it('block__element--modifier...', () => {
         const actual = resolver('foo', 'bar', {baz: true, taz: true});
 
-        assert.equal(actual, 'foo__bar--baz foo__bar--taz');
+        assert.equal(actual, 'foo__bar foo__bar--baz foo__bar--taz');
     });
 
     it('block--modifier extras', () => {

@@ -59,7 +59,7 @@ export const blockWithElementAndModifiers = (
 ): string => {
     const prefix = blockWithElement(block, element);
 
-    return blockWithModifiers(prefix, modifiers);
+    return `${prefix} ${blockWithModifiers(prefix, modifiers)}`;
 };
 
 /* block__element--modifier extras */

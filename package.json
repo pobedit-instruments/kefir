@@ -10,8 +10,7 @@
     },
     "scripts": {
         "test": "npm prune && tsc && mocha tests",
-        "debug": "DEBUG=@qa:* npm test",
-        "prepublishOnly": "npm test"
+        "debug": "DEBUG=@qa:* npm test"
     },
     "devDependencies": {
         "@types/node": "13.13.1",
