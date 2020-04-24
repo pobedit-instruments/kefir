@@ -61,6 +61,14 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 
 ## API
 
+### Parameters
+| Name        | Type     | Description                                                     |
+|-------------|----------|-----------------------------------------------------------------|
+| `block`     | `string` | Encapsulates a standalone entity that is meaningful on its own. |
+| `element`   | `string` | Parts of a block and have no standalone meaning.                |
+| `modifiers` | `object` | Flags on blocks or elements.                                    |
+| `extra`     | `string[]` | A set of additional classes.                                  |
+
 ### $
 
 `$` is a highly polymorphic function with the following interfaces: 
