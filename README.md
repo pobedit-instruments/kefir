@@ -51,7 +51,7 @@ $('foo', 'bar', {baz: true}, ['taz']);
  // foo__bar foo__bar--baz taz
 ```
 
-## Basic usage
+## React usage
 
  ```typescript
 import React, {ReactNode, useState} from 'react';
