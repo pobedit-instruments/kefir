@@ -8,8 +8,47 @@ A [BEM](http://getbem.com/introduction/) friendly class name generator.
 
 ## Installation
 
+Install with npm or Yarn:
+
+npm:
+
 ```
 npm install @pobedit/kefir --save
+```
+
+Yarn:
+
+```
+yarn add @pobedit/kefir
+```
+
+## Basic usage
+
+We have a wide variety of semantically correct BEM rules: 
+
+```typescript
+import {$} from '@pobedit/kefir';
+
+$('foo', 'bar');
+// foo__bar
+
+$('foo', {bar: true});
+// foo foo--bar
+
+$('foo', 'bar', {baz: true});
+ // foo__bar foo__bar--baz
+
+$('foo', {bar: true}, ['baz']);
+ // foo foo--bar baz
+
+$('foo', ['bar']);
+ // foo bar
+
+$('foo', 'bar', ['baz', 'gaz']);
+ // foo__bar baz gaz
+
+$('foo', 'bar', {baz: true}, ['taz']);
+ // foo__bar foo__bar--baz taz
 ```
 
 ## Basic usage
@@ -35,6 +74,16 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 };
 ```
 
+**Output**:
+
+```html
+<div class="foo__container foo__container--bar">
+    <button class="button button--baz">Click</button>>
+</div>
+```
+
+So, your CSS structure looks like: 
+
 ```less
 .foo {
   &__container {
@@ -49,14 +98,6 @@ export const Example: React.FunctionComponent<Props> = (props) => {
     color: white;
   }
 }
-```
-
-**Output**:
-
-```html
-<div class="foo__container foo__container--bar">
-    <button class="button button--baz">Click</button>>
-</div>
 ```
 
 ## API
@@ -145,7 +186,6 @@ type Props = {
 export const Example: React.FunctionComponent<Props> = (props) => {
     const {bar, baz} = props;
     let $ = kefir('foo');
-
 
     return (
         <div className={$('container', { bar })}>
