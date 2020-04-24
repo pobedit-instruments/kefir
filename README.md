@@ -62,6 +62,7 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 ## API
 
 ### Parameters
+
 | Name        | Type     | Description                                                     |
 |-------------|----------|-----------------------------------------------------------------|
 | `block`     | `string` | Encapsulates a standalone entity that is meaningful on its own. |
