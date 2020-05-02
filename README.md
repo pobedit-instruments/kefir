@@ -10,13 +10,13 @@ A [BEM](http://getbem.com/introduction/) friendly class name generator.
 
 Install with npm or Yarn:
 
-npm:
+**npm**:
 
 ```
 npm install @pobedit/kefir --save
 ```
 
-Yarn:
+**Yarn**:
 
 ```
 yarn add @pobedit/kefir
