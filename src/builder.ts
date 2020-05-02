@@ -22,7 +22,7 @@ export const blockWithModifiers = (
     block: string,
     modifiers: Modifiers
 ): string => {
-    let result = ` ${block}`;
+    let result = block;
 
     for (const [name, value] of Object.entries(modifiers)) {
         if (value) {
@@ -30,7 +30,7 @@ export const blockWithModifiers = (
         }
     }
 
-    return result.trim();
+    return result;
 };
 
 /* block--modifier extras */
