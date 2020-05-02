@@ -213,8 +213,14 @@ Please make sure all commits are properly documented.
 
 ## Tests
 
-```shell
+```
 npm test
+```
+
+## Publishing
+
+```
+npm publish --access public --verbose
 ```
 
 ## License
