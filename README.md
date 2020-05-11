@@ -200,7 +200,6 @@ export const Example: React.FunctionComponent<Props> = (props) => {
 **Output**:
 
 ```html
-```html
 <div class="foo__container foo__container--bar">
     <button class="button button--baz">Click</button>>
 </div>
