@@ -1,27 +1,27 @@
-export type Modifiers = Record<string, any>;
-export type Extras = string[];
+type Modifiers = Record<string, any>;
+type Extras = string[];
 
 /* block__element */
-export const blockWithElement = (
+function blockWithElement(
     block: string,
     element: string
-): string => {
+): string {
     return `${block}__${element}`;
-};
+}
 
 /* block extras */
-export const blockWithExtras = (
+function blockWithExtras(
     block: string,
     extras: Extras
-): string => {
+): string {
     return `${block} ${extras.join(' ')}`;
-};
+}
 
 /* block--modifier */
-export const blockWithModifiers = (
+function blockWithModifiers(
     block: string,
     modifiers: Modifiers
-): string => {
+): string {
     let result = block;
 
     for (const [name, value] of Object.entries(modifiers)) {
@@ -31,43 +31,55 @@ export const blockWithModifiers = (
     }
 
     return result;
-};
+}
 
 /* block--modifier extras */
-export const blockWithModifiersAndExtras = (
+function blockWithModifiersAndExtras(
     block: string,
     modifiers: Modifiers,
     extras: Extras
-): string => {
+): string {
     return `${blockWithModifiers(block, modifiers)} ${extras.join(' ')}`;
-};
+}
 
 /* block__element extras */
-export const blockWithElementAndExtras = (
+function blockWithElementAndExtras(
     block: string,
     element: string,
     extras: Extras
-): string => {
+): string {
     return `${blockWithElement(block, element)} ${extras.join(' ')}`;
-};
+}
 
 /* block__element--modifier */
-export const blockWithElementAndModifiers = (
+function blockWithElementAndModifiers(
     block: string,
     element: string,
     modifiers: Modifiers
-): string => {
+): string {
     const prefix = blockWithElement(block, element);
 
     return blockWithModifiers(prefix, modifiers);
-};
+}
 
 /* block__element--modifier extras */
-export const blockWithElementModifiersAndExtras = (
+function blockWithElementModifiersAndExtras(
     block: string,
     element: string,
     modifiers: Modifiers,
     extras: Extras
-): string => {
+): string {
     return `${blockWithElementAndModifiers(block, element, modifiers)} ${extras.join(' ')}`;
+}
+
+export {
+    Modifiers,
+    Extras,
+    blockWithElement,
+    blockWithElementAndModifiers,
+    blockWithElementAndExtras,
+    blockWithElementModifiersAndExtras,
+    blockWithModifiers,
+    blockWithExtras,
+    blockWithModifiersAndExtras
 };

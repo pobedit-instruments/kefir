@@ -17,7 +17,7 @@ import {
     isElement,
     isExtras,
     isModifiers
-} from './utils/type-detector';
+} from '../utils/type-detector';
 
 type ElementModifier<Type> = Type extends infer Modifiers ?
     string : string;
@@ -28,12 +28,12 @@ type ElementModifierExtra<Type> = Type extends infer Extras ?
 type ModifierExtra<Type> = Type extends Extras ?
     Extras : Modifiers;
 
-const resolver = <X, Y>(
+function resolver <X, Y>(
     block: string,
     x?: ElementModifierExtra<X>,
     y?: ModifierExtra<Y>,
     extra?: Extras
-): string => {
+): string {
     if (!x) {
         return block;
     }
@@ -68,6 +68,6 @@ const resolver = <X, Y>(
     }
 
     return block;
-};
+}
 
 export {resolver};

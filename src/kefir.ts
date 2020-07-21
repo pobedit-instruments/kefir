@@ -1,7 +1,7 @@
-import {resolver} from './resolver';
+import {resolver as $} from './resolver';
 
-export const kefir = (block: string) => {
-    return resolver.bind(null, block);
-};
+function kefir(block: string) {
+    return $.bind(null, block);
+}
 
-export {resolver as $};
+export {kefir, $};

@@ -1,4 +1,4 @@
-import {Extras, Modifiers} from '../builder';
+import {Extras, Modifiers} from '../src/builder';
 
 export const isElement = (type: unknown): type is string => {
     return typeof type === 'string';
