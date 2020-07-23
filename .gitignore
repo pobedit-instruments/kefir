@@ -23,7 +23,7 @@
 # --------------------------
 
 .npm
-.npmrc
+#.npmrc
 /node_modules
 npm-debug.log
 
