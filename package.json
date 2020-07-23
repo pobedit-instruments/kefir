@@ -1,6 +1,6 @@
 {
     "name": "@pobedit/kefir",
-    "version": "0.0.3",
+    "version": "1.0.0",
     "description": "A BEM friendly class name generator",
     "author": "Alexander Abashkin <monolithed@gmail.com>",
     "license": "MIT",

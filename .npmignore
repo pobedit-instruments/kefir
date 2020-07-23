@@ -38,3 +38,6 @@ npm-debug.log
 .idea
 .idea_modules/
 cache
+
+*.ts
+!*.d.ts
