@@ -6,6 +6,10 @@
 
 A [BEM](http://getbem.com/introduction/) friendly class name generator.
 
+
+# Deprecated. Use CSS Modules or something else instead.
+
+
 ## Installation
 
 Install with npm or Yarn:
